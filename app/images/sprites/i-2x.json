@@ -1,0 +1,34 @@
+{
+  "name": "i-2x",
+  "checksum": "8b570882e3d4dfc7350f7d8785c6d54f",
+  "shortsum": "8b570",
+  "images": [
+    {
+      "name": "logo",
+      "filename": "logo.png",
+      "checksum": "997e2f16df8c3cf406953865de81841e",
+      "width": 505,
+      "height": 112,
+      "positionX": 0,
+      "positionY": 0
+    },
+    {
+      "name": "menu",
+      "filename": "menu.png",
+      "checksum": "e4cd2d6a5c8dfaecaa37634451dbbfea",
+      "width": 121,
+      "height": 113,
+      "positionX": 0,
+      "positionY": 114
+    },
+    {
+      "name": "plus",
+      "filename": "plus.png",
+      "checksum": "8dd2c064300907e7551dad7169270805",
+      "width": 96,
+      "height": 96,
+      "positionX": 0,
+      "positionY": 229
+    }
+  ]
+}

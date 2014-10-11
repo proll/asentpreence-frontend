@@ -1,0 +1,5 @@
+aspe.Config = function() {
+
+	return {
+	}
+};
