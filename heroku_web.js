@@ -15,23 +15,6 @@ var proxy = new httpProxy.RoutingProxy({changeOrigin: true});
 
 var middleware = [
 
-	//if /api/ called proxying to API
-	function(req, res, next){
-		var requestedPath = url.parse(req.url).pathname;
-		if(requestedPath.indexOf("/v1/") == 0){
-			if (req.method === 'DELETE') {
-				req.headers['content-length'] = '0';
-			}
-			proxy.proxyRequest(req, res, {
-				host: "s.qstoq.me",
-				port: 80
-			});
-			return false;
-		}else{
-			return next();
-		}
-	},
-
 	// if request points to non existing file, route to index.html
 	function(req, res, next){
 		var requestedPath = url.parse(req.url).pathname;

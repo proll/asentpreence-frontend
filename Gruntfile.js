@@ -102,6 +102,8 @@ module.exports = function(grunt) {
 					cwd: '<%= yeoman.app %>',
 					dest: '<%= yeoman.dist %>',
 					src: [
+						'*.html',
+						'**/*.js',
 						'*.{ico,txt}',
 						'.htaccess',
 						'images/{,*/}*.{webp,gif}',
@@ -119,7 +121,7 @@ module.exports = function(grunt) {
 		},
 
 		server: {
-			base: 		"./app",
+			base: 		"./dist",
 			port: 		3015,
 			keepalive: 	true
 		},

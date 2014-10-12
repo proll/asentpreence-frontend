@@ -329,6 +329,15 @@
 	     -o-transition: @transition;
 	        transition: @transition;
 }
+
+.transition-tranform(@params) {
+	-webkit-transition: -webkit-transform @params;
+	   -moz-transition: -moz-transform @params;
+	    -ms-transition: -ms-transform @params;
+	     -o-transition: -o-transform @params;
+	        transition: transform @params;
+}
+
 .transition-delay(@transition-delay) {
 	-webkit-transition-delay: @transition-delay;
 	   -moz-transition-delay: @transition-delay;
