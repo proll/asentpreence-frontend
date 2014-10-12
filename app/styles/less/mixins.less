@@ -316,6 +316,13 @@
 }
 
 // Transitions
+.origin(@pos) {
+    -ms-transform-origin: @pos; /* IE 9 */
+    -webkit-transform-origin: @pos; /* Chrome, Safari, Opera */
+    transform-origin: @pos;
+}
+
+
 .transition(@transition) {
 	-webkit-transition: @transition;
 	   -moz-transition: @transition;
