@@ -27,4 +27,18 @@ $(function() {
 			return false;
 		}
 	);
+
+	// contact - edits
+	// consol
+	$('.contact__inp').on('touchstart click focus', function(e) {
+		var $edit = $(e.currentTarget);
+		$edit.attr('placeholder', '');
+		return true;
+	})
+	$('.contact__edit').on('blur', function(e) {
+		var $edit = $(e.currentTarget),
+			placeholder_text = $edit.attr('placeholdertext');
+		$edit.attr('placeholder', placeholder_text);
+		return true;
+	})
 })

@@ -121,7 +121,7 @@ module.exports = function(grunt) {
 		},
 
 		server: {
-			base: 		"./dist",
+			base: 		"./app",
 			port: 		3015,
 			keepalive: 	true
 		},
