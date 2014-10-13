@@ -447,6 +447,9 @@ header {
 .header__logo {
   float: right;
 }
+.overlay-visible {
+  overflow: hidden;
+}
 .overlay-visible .overlay {
   display: block;
 }
@@ -496,7 +499,7 @@ header {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 40px 40px 77px;
+  padding: 0;
   height: 100%;
 }
 .overlay__slides {
@@ -521,19 +524,24 @@ header {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-image: url(/images/st/product-part.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #000000;
 }
 .overlay__slide h2 {
   font-size: 18px;
   line-height: 2;
   font-weight: normal;
-  margin: 109px 0 0;
+  margin: 0;
+  padding: 149px 40px 0;
 }
 .overlay__slide .overlay__desc {
   position: absolute;
-  bottom: 0;
-  left: 20px;
-  right: 20px;
+  bottom: 77px;
+  left: 40px;
+  right: 40px;
 }
 .overlay__slide h3 {
   font-size: 14px;
@@ -1223,6 +1231,9 @@ header {
     width: auto;
     padding: 0 20px;
   }
+  .overlay-visible {
+    overflow: visible;
+  }
   .overlay-visible #aspe-container {
     display: none;
   }
@@ -1236,24 +1247,18 @@ header {
     padding: 0;
   }
   .overlay__slides-cont {
-    padding: 40px 20px 34px;
-  }
-  .overlay__slide {
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
+    padding: 0;
   }
   .overlay__slide h2 {
     font-size: 14px;
     line-height: 2;
-    margin: 31px 0 0;
+    padding: 71px 2px 0;
   }
   .overlay__slide .overlay__desc {
     position: absolute;
-    bottom: 0;
-    left: 35px;
-    right: 35px;
+    bottom: 34px;
+    left: 20px;
+    right: 20px;
   }
   .overlay__slide h3 {
     display: none;

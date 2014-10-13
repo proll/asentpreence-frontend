@@ -1,4 +1,5 @@
 .overlay-visible {
+	overflow: hidden;
 	.overlay {
 		display: block;
 	}
@@ -52,7 +53,7 @@
 		overflow: hidden;
 		position: relative;
 		.box-sizing(border-box);
-		padding: 40px 40px 80px-3px;
+		padding: 0;
 		height: 100%;
 	}
 		.overlay__slides {
@@ -76,6 +77,7 @@
 				background-repeat: no-repeat;
 
 				background-image: url(/images/st/product-part.jpg);
+				.background-size(cover);
 
 				color: @black;
 
@@ -83,14 +85,15 @@
 					font-size: 18px;
 					line-height: 2;
 					font-weight: normal;
-					margin: 109px 0 0;
+					margin: 0;
+					padding: 109px+40px 40px 0;
 				}
 
 				.overlay__desc {
 					position: absolute;
-					bottom: 0;
-					left: 20px;
-					right: 20px;
+					bottom: 80px-3px;
+					left: 40px;
+					right: 40px;
 				}
 
 					h3 {
