@@ -633,14 +633,21 @@ header {
   padding: 0;
   margin: 0;
   text-transform: uppercase;
+  cursor: default;
 }
 .menu__item-a {
   color: #ffffff;
   text-decoration: none;
+  -webkit-transition: border-color 0.2s;
+  -moz-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+  border-bottom: 1px solid transparent;
 }
 .menu__item-a:hover {
   color: #ffffff;
   text-decoration: none;
+  border-bottom: 1px solid #ffffff;
 }
 .popup {
   position: fixed;
@@ -765,13 +772,17 @@ header {
 .has-context .popup__previous:hover .popup__previous-col {
   background-color: rgba(204, 204, 204, 0.3);
 }
+.body__page-home #aspe-container {
+  height: 100%;
+  min-height: 320px;
+}
 .home__section {
   display: block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  height: 768px;
+  height: 100%;
   position: relative;
   text-align: center;
   background-repeat: no-repeat;
@@ -932,8 +943,9 @@ header {
   width: 112px;
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
--moz-osx-font-smoothing:grayscale .contact__submit-a:hover {
+.contact__submit-a:hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -1108,9 +1120,6 @@ header {
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 @media (min-width: 641px) and (max-width: 768px) {
-  .home__section {
-    height: 1004px;
-  }
   .about__cont {
     margin: 0 146px;
   }
@@ -1142,9 +1151,6 @@ header {
   header {
     padding: 0 0;
     top: -2px;
-  }
-  .home__section {
-    height: 460px;
   }
   .home__section-h {
     width: 222px;
