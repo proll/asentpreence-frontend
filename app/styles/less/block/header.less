@@ -1,7 +1,6 @@
 header {
 	display: block;
-	overflow: hidden;
-	padding: 18px 20px;
+	// overflow: visible;
 	position: absolute;
 	z-index: 2;
 	left: 0;
@@ -9,12 +8,17 @@ header {
 	.transition-tranform(.2s);
 	.box-sizing(border-box);
 	min-width: 320px;
+	// to make place under header clickable (e.g. for collection MARKS)
+	overflow: visible;
+	height: 0;
 }
 
 	.header__menu {
 		display: inline-block;
+		padding: 18px 20px 0;
 	}
 
 	.header__logo {
-		float: right
+		float: right;
+		padding: 18px 20px 0;
 	}

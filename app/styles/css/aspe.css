@@ -429,8 +429,6 @@ BODY {
 /* Blocks */
 header {
   display: block;
-  overflow: hidden;
-  padding: 18px 20px;
   position: absolute;
   z-index: 2;
   left: 0;
@@ -444,12 +442,16 @@ header {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   min-width: 320px;
+  overflow: visible;
+  height: 0;
 }
 .header__menu {
   display: inline-block;
+  padding: 18px 20px 0;
 }
 .header__logo {
   float: right;
+  padding: 18px 20px 0;
 }
 .overlay-visible {
   overflow: hidden;
@@ -1018,8 +1020,13 @@ header {
 }
 @media (max-width: 640px) {
   header {
-    padding: 0 0;
     top: -2px;
+  }
+  .header__menu {
+    padding: 0;
+  }
+  .header__logo {
+    padding: 0;
   }
   .home__section-h {
     width: 222px;
