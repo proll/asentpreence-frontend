@@ -62,45 +62,56 @@ $(function() {
 		mmargin = 10;			// margin from end of container
 
 	function positionMark() {
-		_.forEach($collections, function(collection, i) {
-			$collection = $(collection);
-			cw = $collection.outerWidth();
-			ch = $collection.outerHeight();
-			kw = cw/iw;
-			kh = ch/ih;
-			kc = cw/ch;
+		// _.forEach($collections, function(collection, i) {
+		// 	$collection = $(collection);
+		// 	cw = $collection.outerWidth();
+		// 	ch = $collection.outerHeight();
+		// 	kw = cw/iw;
+		// 	kh = ch/ih;
+		// 	kc = cw/ch;
 
-			if(kc>=ki) {
-				k = kw;
-			} else {
-				k = kh;
-			}
+		// 	if(kc>=ki) {
+		// 		k = kw;
+		// 	} else {
+		// 		k = kh;
+		// 	}
 
-			$marks = $collection.find('.collection__item-mark');
-			_.forEach($marks, function(mark, i) {
-				$mark = $(mark);
-				mx = k*($mark.data('x')-iw/2);
-				my = k*($mark.data('y')-ih/2);
-				if(mx < -cw/2 + mmargin) {
-					mx = -cw/2 + mmargin;
-				} else if(mx > cw/2 - mmargin) {
-					mx = cw/2 - mmargin;
-				}
-				if(my < -ch/2 + mmargin) {
-					my = -ch/2 + mmargin;
-				} else if(my > ch/2 - mmargin) {
-					my = ch/2 - mmargin;
-				}
+		// 	$marks = $collection.find('.collection__item-mark');
+		// 	_.forEach($marks, function(mark, i) {
+		// 		$mark = $(mark);
+		// 		mx = k*($mark.data('x')-iw/2);
+		// 		my = k*($mark.data('y')-ih/2);
+		// 		if(mx < -cw/2 + mmargin) {
+		// 			mx = -cw/2 + mmargin;
+		// 		} else if(mx > cw/2 - mmargin) {
+		// 			mx = cw/2 - mmargin;
+		// 		}
+		// 		if(my < -ch/2 + mmargin) {
+		// 			my = -ch/2 + mmargin;
+		// 		} else if(my > ch/2 - mmargin) {
+		// 			my = ch/2 - mmargin;
+		// 		}
 
-				translate = 'translate(' + mx + 'px, ' + my + 'px)'; 
-				$mark.css({
-					'-webkit-transform': translate,
-					   '-moz-transform': translate,
-					    '-ms-transform': translate,
-					     '-o-transform': translate,
-					        'transform': translate
-				})
-			});
+		// 		translate = 'translate(' + mx + 'px, ' + my + 'px)'; 
+		// 		$mark.css({
+		// 			'-webkit-transform': translate,
+		// 			   '-moz-transform': translate,
+		// 			    '-ms-transform': translate,
+		// 			     '-o-transform': translate,
+		// 			        'transform': translate
+		// 		})
+		// 	});
+		// });
+
+		var $marks = $('.collection__item-mark');
+		_.forEach($marks, function(mark, i) {
+			$mark = $(mark);
+			mx = (100*$mark.data('x')/iw).toPrecision(4);
+			my = (100*$mark.data('y')/ih).toPrecision(4);
+			$mark.css({
+				top:  mx + '%',
+				left: my + '%',
+			})
 		});
 	}
 
@@ -108,7 +119,7 @@ $(function() {
 	if(location.href.indexOf('/collection')!==-1) {
 		$collections = $('.collection__grid-itm');
 		positionMark();
-		$window.on('resize', _.throttle(_.bind(positionMark, this), 500));
+		// $window.on('resize', _.throttle(_.bind(positionMark, this), 500));
 
 	}
 
