@@ -946,6 +946,7 @@ header {
   text-transform: uppercase;
   font-weight: normal;
   margin: 0 0 1em;
+  white-space: nowrap;
 }
 .stockists__col h3 {
   font-size: 14px;
