@@ -930,8 +930,8 @@ header {
 }
 .stockists__col {
   display: inline-block;
-  margin: 0 6%;
-  width: 17%;
+  margin: 0;
+  width: 29%;
   vertical-align: top;
 }
 .stockists__col:first-child {
@@ -946,7 +946,6 @@ header {
   text-transform: uppercase;
   font-weight: normal;
   margin: 0 0 1em;
-  white-space: nowrap;
 }
 .stockists__col h3 {
   font-size: 14px;
@@ -1007,8 +1006,7 @@ header {
     width: auto;
   }
   .stockists__col {
-    margin: 0 1.4%;
-    width: 29%;
+    width: 31.8%;
   }
   .stockists__col:first-child {
     margin-left: 0;
