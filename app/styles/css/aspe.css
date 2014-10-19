@@ -440,6 +440,10 @@ header {
   -ms-transition: -ms-transform 0.2s;
   -o-transition: -o-transform 0.2s;
   transition: transform 0.2s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 320px;
 }
 .header__menu {
   display: inline-block;
@@ -648,129 +652,6 @@ header {
   color: #ffffff;
   text-decoration: none;
   border-bottom: 1px solid #ffffff;
-}
-.popup {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1070;
-  overflow: auto;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
-  -o-transition: opacity 0.3s, -o-transform 0.3s;
-  transition: opacity .3s, transform .3s;
-  opacity: 1;
-}
-.popup.shake {
-  -webkit-animation: shake 0.2s 0 ease;
-  -moz-animation: shake 0.2s 0 ease;
-  -ms-animation: shake 0.2s 0 ease;
-  -o-animation: shake 0.2s 0 ease;
-  animation: shake 0.2s 0 ease;
-}
-.popup.in {
-  opacity: 0;
-}
-.popup__inner {
-  position: relative;
-  float: none;
-  margin: 0 auto;
-  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  background-color: #ffffff;
-}
-.popup__content {
-  padding: 0;
-  margin: 0 auto;
-}
-.popup__table {
-  height: 100%;
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.95);
-}
-.popup__table TD {
-  vertical-align: middle;
-  padding: 0;
-}
-.popup__close {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-.popup__close .popup__close-col {
-  position: fixed;
-  width: 100px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  background-color: rgba(204, 204, 204, 0);
-}
-.popup__close .close {
-  cursor: pointer;
-  vertical-align: top;
-  position: fixed;
-  top: 0;
-  right: 0;
-  line-height: 0;
-  font-size: 0;
-}
-.popup__previous {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 50%;
-  cursor: pointer;
-}
-.popup__previous .popup__previous-col {
-  position: fixed;
-  width: 90px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  -webkit-transition: background-color 0.3s;
-  -moz-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  background-color: rgba(204, 204, 204, 0);
-}
-.popup__previous .prev {
-  position: fixed;
-  top: 34px;
-  left: 35px;
-  display: none;
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 16px 16px 16px 0;
-  border-color: transparent #cccccc transparent transparent;
-}
-.popup__previous:hover .prev {
-  border-color: transparent #818384 transparent transparent;
-}
-.has-context .popup__close:hover .popup__close-col {
-  background-color: rgba(204, 204, 204, 0.3);
-}
-.has-context .popup__previous {
-  display: block;
-}
-.has-context .popup__previous .prev {
-  display: block;
-}
-.has-context .popup__previous:hover .popup__previous-col {
-  background-color: rgba(204, 204, 204, 0.3);
 }
 .body__page-home #aspe-container {
   height: 100%;
@@ -991,30 +872,35 @@ header {
 .about__cont p:first-child {
   text-indent: 0;
 }
+.body__page-collection #aspe-container {
+  height: 100%;
+  min-height: 320px;
+}
 .collection__section {
   display: block;
+  height: 100%;
 }
 .collection__grid {
   margin: 0;
   padding: 0;
   display: block;
-  overflow: hidden;
   font-size: 0;
   line-height: 0;
   text-align: center;
+  height: 100%;
 }
 .collection__grid-itm {
   display: inline-block;
   vertical-align: top;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  height: 800px;
-  max-width: 640px;
+  height: 100%;
+  max-height: 1004px;
   width: 50%;
-  -webkit-background-size: 640px auto;
-  -moz-background-size: 640px auto;
-  -o-background-size: 640px auto;
-  background-size: 640px auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: relative;
   background-image: url(/images/st/product.png);
   overflow: hidden;
@@ -1023,22 +909,11 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-}
-.collection__item-mark1 {
-  margin-top: 0;
-  margin-left: 0;
-}
-.collection__item-mark2 {
-  margin-top: -204px;
-  margin-left: -158px;
-}
-.collection__item-mark3 {
-  margin-top: 245px;
-  margin-left: -220px;
-}
-.collection__item-mark4 {
-  margin-top: 208px;
-  margin-left: 112px;
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: -moz-transform 0.2s;
+  -ms-transition: -ms-transform 0.2s;
+  -o-transition: -o-transform 0.2s;
+  transition: transform 0.2s;
 }
 .collection__item-mark-a {
   display: block;
@@ -1125,13 +1000,7 @@ header {
   }
   .collection__grid-itm {
     display: block;
-    height: 1004px;
-    max-width: 768px;
     width: auto;
-    -webkit-background-size: auto auto;
-    -moz-background-size: auto auto;
-    -o-background-size: auto auto;
-    background-size: auto auto;
   }
   .stockists__col {
     margin: 0 1.4%;
@@ -1203,30 +1072,11 @@ header {
     padding: 49px 20px 20px;
   }
   .collection__grid-itm {
-    display: block;
+    display: inline-block;
     margin: 0 auto;
     height: 460px;
-    min-width: 320px;
-    -webkit-background-size: auto 460px;
-    -moz-background-size: auto 460px;
-    -o-background-size: auto 460px;
-    background-size: auto 460px;
-  }
-  .collection__item-marks {
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5);
-    width: 100%;
-    height: 100%;
-  }
-  .collection__item-mark-a {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    transform: scale(2);
+    min-width: 240px;
+    width: 50%;
   }
   .stockists__row {
     padding-top: 69px;
@@ -1273,5 +1123,14 @@ header {
     position: absolute;
     border-right: 1px solid #333;
     padding: 7px 20px;
+  }
+}
+@media (max-width: 480px) {
+  .collection__grid-itm {
+    display: block;
+    margin: 0 auto;
+    height: 460px;
+    min-width: 320px;
+    width: auto;
   }
 }
